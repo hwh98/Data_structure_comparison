@@ -1,8 +1,9 @@
-# The-login-checker-problem
+# Main task
 
-The implementation of five data structures, including three basic data structures, list, sorted array and hash table, and two advanced data structues, bloom filters and Cuckoo filter. The unit test for the implementation is also included.
+The main task is to check whether certain element exist in the data structure, so the searching of the data structure should be efficiently. That's to say, the goal here is to find whether an element is already existed efficiently. Imagine that you might want to check if the account is already taken or notwhen a user is creating an account.
 
-The goal here is to find whether an element is already existed or not efficiently. Imagine that you might want to check if the account is already taken or notwhen a user is creating an account.
+In this repositroy, I implementation five data structures, including three basic data structures, list, sorted array and hash table, and two advanced data structues, bloom filters and Cuckoo filter. The unit test for the implementation is also included.
+
 
 ## Three basic data structures
 First, we simply created a list and used linear search to find the element. Second, we store all the information in a sorted array and look for the element with binary search. In the third approach, we put all the information in a hash table and find the element through hashing.
