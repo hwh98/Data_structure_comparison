@@ -1,3 +1,4 @@
+# Goal
 
 The main task is to check whether certain element exist in a set. That's to say, the goal here is to find whether an element is already existed in a set with efficiency. Imagine that you might want to check if the account is already taken or notwhen a user is creating an account.
 
