@@ -24,11 +24,20 @@ Here are some features
 
 Cuckoo filter is a spce-efficient probabilistic data structure that is used to check whether a element is a memebr of a set, and it can delete existing element, which is not supported by bloom filter. Flase positive match are possible but false negative are not. As a result, for applicatin that store many items and target low false positive rate, cuckoo filter can achieve lower space overhead than space-optimzized bloom filter.
 
-Cuckoo filter is a minimized  hash table that uses cuckoo hashing to resolve collision. It's minized its space complexity by only keeping a f-bit fingerprint of the value to be store in a set rather than uses a bit to store data like bloom filter. It has an array of bucket. THe number of fingerprint a bucket can hold is referred to as $b$, and each bucket can have same amount of entries. Besides, the collision is resolved by the Cuckoo hashing.
+Cuckoo filter is a minimized hash table that uses cuckoo hashing to resolve collision. It's minized its space complexity by only keeping a f-bit fingerprint of the value to be store in a set rather than uses a bit to store data like bloom filter. It has an array of bucket. THe number of fingerprint a bucket can hold is referred to as $b$, and each bucket can have same amount of entries.  
 
+Here is the 5 buckets cuckoo filter with 4 entries
+| Bucket | 1st entry | 2nd entry | 3rd entry | 4rd entry |
+| :-----: | :---: | :---: | :---: | :---: |
+| 0 |  |  |  |  |
+| 1 |  |  |  |  | 
+| 2 |  |  |  |  |
+| 3 |  |  |  |  | 
+| 4 |  |  |  |  |
 
+Besides, the collision of the Cuckoo filter is resolved by the Cuckoo hashing. First, we hash an entry with one hash function, and inserting a smalle f-bit fingerprint of the entry into an open position of the buckets. When the bucket is full, the filter recursively kicks existing entries to their alternate bucket with another hashing function until space is found.
 
-Refereenced: 
+### Refereenced: 
 - https://en.wikipedia.org/wiki/Cuckoo_filter
 - https://bdupras.github.io/filter-tutorial/
 - https://iq.opengenus.org/cuckoo-filter/
