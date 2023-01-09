@@ -37,6 +37,18 @@ Here is the 5 buckets cuckoo filter with 4 entries
 
 Besides, the collision of the Cuckoo filter is resolved by the Cuckoo hashing. First, we hash an entry with one hash function, and inserting a smalle f-bit fingerprint of the entry into an open position of the buckets. When the bucket is full, the filter recursively kicks existing entries to their alternate bucket with another hashing function until space is found.
 
+## Time and space computational complexity comparison.
+
+The time and space computational complexity of linear search, binary search, bloom filter and Cuckoo filter.
+
+|  | Time complexity | Space computational complexity | Note | 
+| :-----: | :---: | :---: | :---: |
+| Linear search | $O(n)$ | $O(1)$ | n is the number of element |
+| Binary search | $O(logn)$ | $O(1)$-Iterative<br/>$O(logn)$-Recursive |  | 
+| Hashing | $O(n)$ | $O(n)$ | n is the number of element |
+| Bloom filter | $O(K)$ | $1.44log( 1/fpp )$ | n: estimated number of element. <br/> m: bit array of m bits <br/> k: number of hash functions. <br/>fpp = false positive probability | 
+| Cuckoo filter | $O(1)$ | $1.05[ (log(1/fpp)+2) / load ]$ | load : the percentage of the filter it’s currently using. |
+
 ### Refereenced: 
 - https://en.wikipedia.org/wiki/Cuckoo_filter
 - https://bdupras.github.io/filter-tutorial/
