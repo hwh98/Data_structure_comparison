@@ -46,7 +46,7 @@ The time and space computational complexity of linear search, binary search, blo
 | Linear search | $O(n)$ | $O(1)$ | n is the number of element |
 | Binary search | $O(logn)$ | $O(1)$-Iterative<br/>$O(logn)$-Recursive |  | 
 | Hashing | $O(n)$ | $O(n)$ | n is the number of element |
-| Bloom filter | $O(K)$ | $1.44log( 1/fpp )$ | n: estimated number of element. <br/> m: bit array of m bits <br/> k: number of hash functions. <br/>fpp = false positive probability | 
+| Bloom filter | $O(k)$ | $1.44log( 1/fpp )$ | n: estimated number of element. <br/> m: bit array of m bits <br/> k: number of hash functions. <br/>fpp = false positive probability | 
 | Cuckoo filter | $O(1)$ | $1.05[ (log(1/fpp)+2) / load ]$ | load : the percentage of the filter it’s currently using. |
 
 ### Refereenced: 
